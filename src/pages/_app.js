@@ -91,7 +91,6 @@ function MyApp({ Component, pageProps }) {
 
         {/*<!-- Twitter Meta Tags -->*/}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:card" content="website" />
         <meta property="twitter:title" content="Blockchain Global Day" />
         <meta property="twitter:site" content="@BlockchainGlobalDay" />
         <meta property="twitter:app:url:ipad" content={DOMAIN_URL} />
