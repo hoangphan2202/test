@@ -71,10 +71,10 @@ function MyApp({ Component, pageProps }) {
         {/*<!-- Google / Search Engine Tags -->*/}
         <meta itemProp="name" content="Blockchain Global Day" />
         <meta itemProp="description" content="Blockchain Global Day: IMMERSE INTO THE INFINITE GAMETECH WORLD" />
-        <meta itemProp="image" content={`${DOMAIN_URL}/logo-meta.png`} />
+        <meta itemProp="image" content={`${DOMAIN_URL}/images/logo-meta.png`} />
 
         <meta name="title" content="Blockchain Global Day" />
-        <meta name="image" content={`${DOMAIN_URL}/logo-meta.png`} />
+        <meta name="image" content={`${DOMAIN_URL}/images/logo-meta.png`} />
         <meta name="robots" content="index" />
 
         {/*<!-- Facebook Meta Tags -->*/}
@@ -83,13 +83,14 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:url" content={DOMAIN_URL} />
         <meta property="og:site_name" content="Blockchain Global Day" />
         <meta property="og:description" content="Blockchain Global Day: IMMERSE INTO THE INFINITE GAMETECH WORLD" />
-        <meta property="og:image" content={`${DOMAIN_URL}/logo-meta.png`} />
+        <meta property="og:image" content={`${DOMAIN_URL}/images/logo-meta.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
         <meta property="og:image:alt" content="Blockchain Global Day" />
         <meta property="og:locale" content="en_US" />
 
         {/*<!-- Twitter Meta Tags -->*/}
+        <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:card" content="website" />
         <meta property="twitter:title" content="Blockchain Global Day" />
         <meta property="twitter:site" content="@BlockchainGlobalDay" />
@@ -98,7 +99,7 @@ function MyApp({ Component, pageProps }) {
           property="twitter:description"
           content="Blockchain Global Day: IMMERSE INTO THE INFINITE GAMETECH WORLD"
         />
-        <meta property="twitter:image" content={`${DOMAIN_URL}/logo-meta.png`} />
+        <meta property="twitter:image" content={`${DOMAIN_URL}/images/logo-meta.png`} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/favicon.png" />
         <link rel="icon" href="/favicon.png" />
