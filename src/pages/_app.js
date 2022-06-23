@@ -87,6 +87,12 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
         <meta property="og:image:alt" content="Blockchain Global Day" />
+
+        <meta property="og:image" content={`${DOMAIN_URL}/images/logo-meta-small.png`} />
+        <meta property="og:image:width" content="325" />
+        <meta property="og:image:height" content="325" />
+        <meta property="og:image:alt" content="Blockchain Global Day" />
+
         <meta property="og:locale" content="en_US" />
 
         {/*<!-- Twitter Meta Tags -->*/}
