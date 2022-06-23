@@ -1,0 +1,13 @@
+.container{
+  background-image: url("/images/layout/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.imgBgAgendaMobile{
+  margin: 0 auto;
+  min-height: 1000px;
+  @media screen and (max-width:375px) {
+    min-height: 1000px;
+  }
+}

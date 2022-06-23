@@ -1,0 +1,37 @@
+image: ubuntu
+
+stages:
+  - deploy
+deploy_dev:
+  stage: deploy
+  before_script:
+    ##
+    ## Install ssh-agent if not already installed, it is required by Docker.
+    ## (change apt-get to yum if you use an RPM-based image)
+    ##
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+  script:
+    # run the ssh-agent corresponding to the current Gitlab Runner
+    - eval $(ssh-agent -s)
+
+    # add the contents of the SSH_PRIVATE_KEY variable to the agent store
+    - bash -c 'ssh-add <(echo "$SSH_KEY_DEV")'
+
+    # create folder ~/.ssh
+    - mkdir -p ~/.ssh
+
+    # Scan for SSH Host key for server IP address
+    # Add the result in to file known_hosts
+    - ssh-keyscan -H $SSH_HOST_DEV >> ~/.ssh/known_hosts
+
+    # Modify file known_hosts . permissions
+    - chmod 644 ~/.ssh/known_hosts
+    - >
+      ssh $SSH_USER_DEV@$SSH_HOST_DEV
+      "cd ${PATH_TO_PROJECT_DEV};
+      git pull origin ${CI_COMMIT_BRANCH};
+      yarn;
+      yarn prod1;"
+  only:
+    refs:
+      - develop

@@ -1,0 +1,80 @@
+import classnames from 'classnames'
+import { Fragment, useEffect, useState } from 'react'
+import { Menu, Transition } from '@headlessui/react'
+import PropTypes from 'prop-types'
+import { useRouter } from 'next/router'
+import { RiArrowDownSFill } from 'react-icons/ri'
+
+const Dropdown = ({
+  menu,
+  children,
+  className,
+  classNameMenu,
+  classNameMenuItem,
+  onClick,
+  bsPrefixMenu,
+  isArrow = true,
+}) => {
+  const { pathname } = useRouter()
+  const [isOpen, setIsOpen] = useState(false)
+
+  const openMenu = () => setIsOpen(true)
+  const closeMenu = () => setIsOpen(false)
+
+  useEffect(() => {
+    closeMenu()
+  }, [pathname])
+
+  return (
+    <Menu as="div" className={classnames('relative inline-block', className)}>
+      <Menu.Button
+        className={classnames(
+          bsPrefixMenu ? bsPrefixMenu : ' focus:boxShadow:none w-full px-5 py-2 shadow-sm focus:outline-none',
+          classNameMenu,
+        )}
+        onMouseEnter={openMenu}
+        onMouseLeave={closeMenu}
+      >
+        <div className="flex items-center justify-center" onClick={onClick}>
+          {menu}
+          {isArrow && <RiArrowDownSFill className="ml-1" size={24} />}
+        </div>
+      </Menu.Button>
+
+      <Transition
+        onMouseEnter={openMenu}
+        onMouseLeave={closeMenu}
+        show={isOpen}
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <Menu.Items
+          static
+          className={classnames(
+            'absolute right-0 z-50 w-max origin-top-left rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none',
+            classNameMenuItem,
+          )}
+        >
+          <div className="py-1">{children}</div>
+        </Menu.Items>
+      </Transition>
+    </Menu>
+  )
+}
+
+Dropdown.propTypes = {
+  children: PropTypes.node,
+  menu: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  className: PropTypes.string,
+  classNameMenu: PropTypes.string,
+  classNameMenuItem: PropTypes.string,
+  isArrow: PropTypes.bool,
+  onClick: PropTypes.func,
+}
+
+export default Dropdown

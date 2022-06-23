@@ -1,0 +1,62 @@
+.starSmall {
+  animation: starflow 300s linear infinite;
+  transform: rotate(-25deg);
+}
+.starMedium {
+  animation: starflow 200s linear infinite;
+  transform: rotate(-25deg);
+}
+.starLarge {
+  animation: starflow 100s linear infinite;
+  transform: rotate(-25deg);
+}
+
+@keyframes starflow {
+  100%{
+    background-position: -1000px 0;
+  }
+  0% {
+    background-position: 1000px 0;
+  }
+}
+
+.starFall {
+  height: 500px;
+  width: 1000px;
+  overflow: hidden;
+  // transform: translate(50%, 0%);
+  @media screen and (min-width:576px) {
+    transform: translate(50%, 0%);
+  }
+  &:nth-of-type(3n + 1) img {
+    position: absolute;
+    animation: star-flow 3s infinite;
+  }
+  &:nth-of-type(3n + 2) img {
+    position: absolute;
+    animation: star-flow 2.5s 0.5s infinite;
+  }
+  &:nth-of-type(3n + 3) img {
+    position: absolute;
+    animation: star-flow 2s 1s infinite;
+  }
+}
+
+@keyframes star-flow {
+  0% {
+    right: 0%;
+    top: 0%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    right: 70%;
+    top: 70%;
+    opacity: 0;
+  }
+}
