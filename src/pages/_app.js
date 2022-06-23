@@ -81,7 +81,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:title" content="Blockchain Global Day" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={DOMAIN_URL} />
-        <meta property="og:site_name" content="Blockchain" />
+        <meta property="og:site_name" content="Blockchain Global Day" />
         <meta property="og:description" content="Blockchain Global Day: IMMERSE INTO THE INFINITE GAMETECH WORLD" />
         <meta property="og:image" content={`${DOMAIN_URL}/logo-meta.png`} />
         <meta property="og:image:width" content="1200" />
