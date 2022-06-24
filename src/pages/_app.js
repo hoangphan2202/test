@@ -82,14 +82,14 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:url" content={DOMAIN_URL} />
         <meta property="og:site_name" content="Blockchain Global Day" />
         <meta property="og:description" content="Blockchain Global Day: IMMERSE INTO THE INFINITE GAMETECH WORLD" />
-        <meta property="og:image" content={`${DOMAIN_URL}/images/logo-meta.png?v=1`} />
+        <meta property="og:image" content={`${DOMAIN_URL}/images/new-logo-meta`} />
         {/*<meta property="og:image:width" content="1200" />*/}
         {/*<meta property="og:image:height" content="628" />*/}
         {/*<meta property="og:image:alt" content="Blockchain Global Day" />*/}
 
         {/*<meta property="og:image" content={`${DOMAIN_URL}/images/logo-meta-small.png?v=1`} />*/}
-        <meta property="og:image:width" content="382" />
-        <meta property="og:image:height" content="200" />
+        <meta property="og:image:width" content="600" />
+        <meta property="og:image:height" content="315" />
         <meta property="og:image:alt" content="Blockchain Global Day" />
 
         <meta property="og:locale" content="en_US" />
